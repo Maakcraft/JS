@@ -1,0 +1,20 @@
+"use strict";
+
+window.onload = function() {
+	function myFunction() {
+		var i = 0;
+		let elements = document.querySelectorAll('ul > li > label > .sf-input-select >.sf-option-active');
+		for (let elem of elements) {
+			if ( elem.innerHTML != 'All') {
+				i++;
+			}
+		}
+		if (i != 0) {
+			document.getElementById('submitbtn').style.display = 'block';
+		} else {
+			document.getElementById('submitbtn').style.display = 'none';
+		}
+	}
+	var el = document.getElementById('primary');
+	el.addEventListener("mousemove", myFunction);
+}
